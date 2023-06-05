@@ -1,0 +1,82 @@
+.nav{
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    width:90vw;
+    max-width: 120rem;
+    margin:0 auto;
+    padding-top:4rem;
+    
+    &__block{
+        position:fixed;
+        top:0;
+        right:0;
+        width:70vw;
+        z-index:5;
+        background:var(--clr-bg-dark);
+        height:100%;
+        animation:slideFromLeft cubic-bezier(0.075, 0.82, 0.165, 1) .9s;
+        @include device(big__tab){
+            display:block;
+            position:static;
+            background: transparent;
+            flex:0 0 40%;
+              
+
+        }
+        
+    }
+    &__nav{
+        @include device(big_tab){
+            display:none;
+        }
+    }
+    &__list{
+        transform:translateY(40%);
+        text-align: center;
+        @include device(big__tab){
+            display:flex;
+            align-items: center;
+            gap:0 8rem;
+            transform:translateY(0);
+             
+        }
+
+    }
+    &__link{
+        font-size:3.2rem;
+        margin:3rem 0;
+        transition:.9s all;
+        padding:1rem 2rem;
+        &:hover,&:active{
+            background:linear-gradient(120deg,transparent 50%,var(--clr-primary) 50%);
+            background-position:100%;
+            background-size:250%;
+            transform:translateX(1rem);
+            
+            
+        }
+        @include device(big__tab){
+            font-size:1.6rem;
+            padding:0;
+        }
+    }
+    &__btn{
+        display:block;
+        @include device(big__tab){
+            display:none;
+        }
+    }
+    &__closebtn{
+        @include device(big__tab){
+            display:none;
+        }
+        position:absolute;
+        top:2rem;
+        right:4rem;
+        margin-top:5rem;
+    }
+    &__close{
+        width:100%;
+    }
+}

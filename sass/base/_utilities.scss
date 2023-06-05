@@ -1,0 +1,26 @@
+.green{
+    color:var(--clr-primary);
+    font-weight:700;
+    font-size:2.8rem;
+}
+.black{
+    color:var(--clr-bg-dark);
+}
+.center{
+    width:90vw;
+    max-width: 120rem;
+    margin:0 auto;
+    padding:3.6rem 0;
+    @include device(big__tab){
+        width:70vw;
+    }
+    
+
+}
+
+.hide{
+    display:none;
+    @include device(big_tab){
+        display:block;
+    }
+}
